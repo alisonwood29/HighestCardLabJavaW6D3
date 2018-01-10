@@ -22,4 +22,8 @@ public class Deck {
             }
         }
     }
+
+    public void removeCard() {
+        this.cards.remove(0);
+    }
 }

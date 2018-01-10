@@ -10,6 +10,7 @@ public class TestDeck {
     @Before
     public void before(){
         deck = new Deck();
+        deck.populate();
     }
 
     @Test
@@ -19,7 +20,13 @@ public class TestDeck {
 
     @Test
     public void canPopulateDeck(){
-        deck.populate();
+//        deck.populate();
         assertEquals(52, deck.cardCount());
+    }
+
+    @Test
+    public void canRemoveCard(){
+        deck.removeCard();
+        assertEquals(51, deck.cardCount());
     }
 }
