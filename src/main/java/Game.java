@@ -8,16 +8,17 @@ public class Game {
 
     public Game(Deck deck){
         this.deck = deck;
-        Player player1 = new Player("Joe");
-        Player player2 = new Player("Alison");
-        Player player3 = new Player("Manny");
         this.players = new ArrayList<>();
-        players.add(player1);
-        players.add(player2);
-        players.add(player3);
     }
 
 
+    public int playerCount() {
+        return this.players.size();
+    }
+
+    public void addPlayer(Player player) {
+        players.add(player);
+    }
 
     public void deal() {
         deck.populate();
@@ -25,6 +26,5 @@ public class Game {
         for(Player player: players) {
             player.addCard(deck.removeCard());
         }
-
     }
 }

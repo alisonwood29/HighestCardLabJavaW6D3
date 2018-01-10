@@ -7,27 +7,40 @@ public class TestGame {
 
     Game game;
     Deck deck;
-    Player player;
+    Player player1;
+    Player player2;
+    Player player3;
 
     @Before
     public void before(){
         deck = new Deck();
-////        deck.populate();
         game = new Game(deck);
-        player = new Player("Alison");
+        player1 = new Player("Joe");
+        player2 = new Player("Alison");
+        player3 = new Player("Manny");
 
     }
 
-//    @Test
-//    public void deckIsPopulated(){
-//        assertEquals(52, deck.cardCount());
-//    }
+    @Test
+    public void deckIsPopulated(){
+        deck.populate();
+        assertEquals(52, deck.cardCount());
+    }
+
+    @Test
+    public void canAddPlayerToGame(){
+        game.addPlayer(player1);
+        assertEquals(1, game.playerCount());
+
+    }
     @Test
     public void canDeal(){
+        game.addPlayer(player1);
+        game.addPlayer(player2);
+        game.addPlayer(player3);
         game.deal();
-        assertEquals(1, player.handCardCount());
-        assertEquals(, deck.cardCount());
-
+        assertEquals(1, player1.handCardCount());
+        assertEquals(49, deck.cardCount());
     }
 
 }
