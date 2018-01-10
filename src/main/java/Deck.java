@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Deck {
 
-    private ArrayList<Card> cards;
+    public ArrayList<Card> cards;
 
     public Deck(){
         this.cards = new ArrayList<>();
@@ -23,7 +23,7 @@ public class Deck {
         }
     }
 
-    public void removeCard() {
-        this.cards.remove(0);
+    public Card removeCard() {
+        return this.cards.remove(0);
     }
 }
