@@ -18,6 +18,9 @@ public class TestGame {
         player1 = new Player("Joe");
         player2 = new Player("Alison");
         player3 = new Player("Manny");
+        game.addPlayer(player1);
+        game.addPlayer(player2);
+        game.addPlayer(player3);
 
     }
 
@@ -33,14 +36,16 @@ public class TestGame {
         assertEquals(1, game.playerCount());
 
     }
+
     @Test
     public void canDeal(){
-        game.addPlayer(player1);
-        game.addPlayer(player2);
-        game.addPlayer(player3);
         game.deal();
         assertEquals(1, player1.handCardCount());
+        assertEquals(1, player2.handCardCount());
         assertEquals(49, deck.cardCount());
     }
+
+
+
 
 }

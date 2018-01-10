@@ -24,5 +24,11 @@ public class TestPlayer {
         player.addCard(card);
         assertEquals( 1, player.handCardCount());
     }
+
+    @Test
+    public void canGetCardScore(){
+        player.addCard(card);
+        assertEquals(1, player.getScore());
+    }
 }
 

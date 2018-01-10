@@ -27,4 +27,5 @@ public class TestCard {
         int value = card.getRank().getValue();
         assertEquals(12, value);
     }
+
 }
